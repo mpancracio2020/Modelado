@@ -9,7 +9,7 @@
     <link name="body_link">
         <visual>       
             <geometry>
-                <cylinder length="0.8" radius="0.05"/> <!-- Cilindro vertical que representa la rueda -->
+                <cylinder length="0.8" radius="0.05"/>
             </geometry>
          
             <origin rpy="0 0 0" xyz="0 0 0.4" />
@@ -20,7 +20,7 @@
         </visual>
         <inertial>
             <origin rpy="0 0 0" xyz="0 0 0.4" />
-            <mass value="5.0" />
+            <mass value="5000.0" />
             <inertia ixx="1.0" ixy="0.0" ixz="0.0"
             iyy="0.0" iyz="0.0" izz="1.0" />
         </inertial>
@@ -32,6 +32,7 @@
             <geometry>
              <box size="0.1 0.1 0.8" />
             </geometry>
+            <mass value="5.0" />
         </collision>
 
     </link>
@@ -39,24 +40,24 @@
      <link name="end_link">
 
         <inertial>
-            <origin rpy="0 0 0" xyz="-0.2 0 0.1" />
-            <mass value="1.0" />
+            <origin rpy="0 0 0" xyz="-0.8 0 0.1" />
+            <mass value="5" />
             <inertia ixx="1.0" ixy="0.0" ixz="0.0"
             iyy="0.0" iyz="0.0" izz="1.0" />
 
         </inertial>
         <visual>        
-            <origin rpy="0 0 0" xyz="-0.2 0 0.1" />
+            <origin rpy="0 0 0" xyz="-0.8 0 0.1" />
             <geometry>
-                <box size="1.0 0.1 0.1" />
+                <box size="3 0.1 0.1" />
             </geometry>
             <material name="red"/>
         </visual>
 
         <collision>
-            <origin rpy="0 0 0" xyz="0 0 0" />
+            <origin rpy="0 0 0" xyz="-0.8 0 0.1" />
             <geometry>
-             <box size="0.4 0.1 0.1" />
+             <box size="3 0.1 0.1" />
             </geometry>
         </collision>
 
@@ -65,8 +66,7 @@
      <joint name="body_to_end" type="continuous">
         <parent link="body_link" />
         <child link="end_link" />
-        
-        <origin xyz="0.05 0 0.1" />
+        <origin xyz="0 0 0.1" />
         <axis xyz="0 0 1" />
 
         
