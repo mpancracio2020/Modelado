@@ -52,10 +52,10 @@ for i in range(2,5):
     p.changeDynamics(robotId, i, spinningFriction = SPINNING_FRICTION)
     p.changeDynamics(robotId, i, rollingFriction = ROLLING_FRICTION)
 
-def process_information(pos): 
-
+def process_information(pos,init_time, file_csv): 
+    
     # Method to get vel and pos information to fill csv file.
-   
+
     time_passed = 0
     finish = 0
     position = p.getBasePositionAndOrientation(robotId)
@@ -69,32 +69,36 @@ def process_information(pos):
         time_passed = abs(current_time - init_time)
         
         data = str(time_passed) + " " + str(pos) + " " +  str(wheels_vel) + " " + str(VEL)+ " " + str(FORCE) +"\n"
-        folder.write(data)
+        file_csv.write(data)
 
         if (pos >= 20): # end the record data and finish the execution.
             finish = 1
             
     return pos, finish
-# Init variables (position, time and program exec step)
-pos = 0.0
-init_time = time.time()
-program_step = 0
 
-# Open/create csv file
-folder_name = "Fase3.csv"
-folder = open(folder_name, mode='w', newline='') 
+def main():
+    # Init variables (position, time and program exec step)
+    pos = 0.0
+    init_time_clock = time.time()
+    program_step = 0
+    # Open/create csv file
+    folder_name = "Fase3.csv"
+    folder = open(folder_name, mode='w', newline='') 
 
-try:
-    while True:
-        if program_step == 0:            
-            p.setJointMotorControlArray(robotId,[2,3,4,5],p.VELOCITY_CONTROL, targetVelocities = [VEL,VEL,VEL,VEL], forces =[FORCE,FORCE,FORCE,FORCE])
-            pos, program_step = process_information(pos) # update the position and get time.
+    try:
+        while True:
+            if program_step == 0:            
+                p.setJointMotorControlArray(robotId,[2,3,4,5],p.VELOCITY_CONTROL, targetVelocities = [VEL,VEL,VEL,VEL], forces =[FORCE,FORCE,FORCE,FORCE])
+                pos, program_step = process_information(pos,init_time_clock, folder) # update the position and get time.
 
-        if program_step == 1:
-            p.setJointMotorControlArray(robotId,[2,3,4,5],p.VELOCITY_CONTROL, targetVelocities = [ZERO_VEL,ZERO_VEL,ZERO_VEL,ZERO_VEL])
+            if program_step == 1:
+                p.setJointMotorControlArray(robotId,[2,3,4,5],p.VELOCITY_CONTROL, targetVelocities = [ZERO_VEL,ZERO_VEL,ZERO_VEL,ZERO_VEL])
+                
+    except KeyboardInterrupt:
+        folder.close()
+        pass
             
-except KeyboardInterrupt:
-    folder.close()
-    pass
-        
-p.disconnect()    
+    p.disconnect()    
+
+if __name__ == "__main__":
+    main()
