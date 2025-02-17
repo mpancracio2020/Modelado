@@ -1,0 +1,407 @@
+<?xml version="1.0"?>
+<!-- created with Phobos 1.0.1 "Capricious Choutengan" -->
+  <robot name="u-bot">
+
+    <link name="X1">
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="0.001"/>
+        <inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001"/>
+      </inertial>
+      <visual name="Cube.004.000">
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="../meshes/dae/Cube.016.dae" scale="0.01 0.425 0.25"/>
+        </geometry>
+      </visual>
+      <collision name="Cube.004.000.000">
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="../meshes/dae/Cube.041.dae" scale="1.0 1.0 1.0"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="X2">
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="0.001"/>
+        <inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001"/>
+      </inertial>
+      <visual name="Cube.000.001.002">
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="../meshes/dae/Cube.015.dae" scale="0.01 0.75 0.25"/>
+        </geometry>
+      </visual>
+      <collision name="Cube.000.001.002.000">
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="../meshes/dae/Cube.042.dae" scale="1.0 1.0 1.0"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="X3">
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="0.001"/>
+        <inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001"/>
+      </inertial>
+      <visual name="Cube.003.000">
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="../meshes/dae/Cube.018.dae" scale="0.01 0.75 0.25"/>
+        </geometry>
+      </visual>
+      <collision name="Cube.003.000.000">
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="../meshes/dae/Cube.043.dae" scale="1.0 1.0 1.0"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="X4">
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="0.001"/>
+        <inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001"/>
+      </inertial>
+      <collision name="Cube.001.000">
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="../meshes/dae/Cube.017.dae" scale="0.01 0.425 0.25"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="chasis">
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="1000"/>
+        <inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001"/>
+      </inertial>
+      <visual name="Cube.000">
+        <origin xyz="-0.0052 0.02539 0.38337" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="../meshes/dae/Cube.000.dae" scale="1.0 1.0 1.0"/>
+        </geometry>
+      </visual>
+      <collision name="Cube.000.000">
+        <origin xyz="-0.0036 0.03044 0.37389" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="../meshes/dae/Cube.001.dae" scale="1.0 1.0 1.0"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="link_foreamr">
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="0.001"/>
+        <inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001"/>
+      </inertial>
+      <visual name="Forearm.000">
+        <origin xyz="0 -0.69 0" rpy="-1.5708 0 0"/>
+        <geometry>
+          <mesh filename="../meshes/dae/Cube.002.dae" scale="1.0 1.0 1.0"/>
+        </geometry>
+      </visual>
+      <collision name="Forearm.000.000">
+        <origin xyz="0.00012 -0.69 0" rpy="-1.5708 0 0"/>
+        <geometry>
+          <mesh filename="../meshes/dae/Cube.022.dae" scale="1.0 1.0 1.0"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="link_front_left_wheel">
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="1"/>
+        <inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001"/>
+      </inertial>
+      <visual name="Cylinder.004">
+        <origin xyz="-0.00027 0.00049 -0.00119" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="../meshes/dae/Cylinder.006.dae" scale="0.26793 0.26864 0.21329"/>
+        </geometry>
+      </visual>
+      <collision name="Cylinder.004.000">
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="../meshes/dae/Cylinder.015.dae" scale="1.0 1.0 1.0"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="link_front_right_wheel">
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="1"/>
+        <inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001"/>
+      </inertial>
+      <collision name="Cylinder.005.000">
+        <origin xyz="0 0 0.22" rpy="0 -3.14159 0"/>
+        <geometry>
+          <mesh filename="../meshes/dae/Cylinder.009.dae" scale="1.0 1.0 1.0"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="link_hand">
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="1"/>
+        <inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001"/>
+      </inertial>
+      <visual name="Hand.000">
+        <origin xyz="0 0 0" rpy="0 3.14159 0"/>
+        <geometry>
+          <mesh filename="../meshes/dae/Cube.011.dae" scale="1.49878 1.8 1.0"/>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name="link_humerus">
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="1"/>
+        <inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001"/>
+      </inertial>
+      <visual name="Humerus">
+        <origin xyz="0 0.96 0" rpy="-1.5708 0 0"/>
+        <geometry>
+          <mesh filename="../meshes/dae/Cube.007.dae" scale="0.055 0.045 0.95"/>
+        </geometry>
+      </visual>
+      <collision name="Humerus.000">
+        <origin xyz="0 0.96 0" rpy="-1.5708 0 0"/>
+        <geometry>
+          <mesh filename="../meshes/dae/Cube.008.dae" scale="1.0 1.0 1.0"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="link_left_finger">
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="1"/>
+        <inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001"/>
+      </inertial>
+      <visual name="Cube.000.001">
+        <origin xyz="0.00014 0.14 -0.00028" rpy="1.56881 0.00053 -0.00102"/>
+        <geometry>
+          <mesh filename="../meshes/dae/Cube.013.dae" scale="1.0 1.0 2.75"/>
+        </geometry>
+      </visual>
+      <collision name="Cube.000.001.000">
+        <origin xyz="0.00014 0.14 -0.00028" rpy="1.56881 0.00053 -0.00102"/>
+        <geometry>
+          <mesh filename="../meshes/dae/Cube.003.dae" scale="1.0 1.0 1.46667"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="link_rear_left_wheel">
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="0.1"/>
+        <inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001"/>
+      </inertial>
+      <collision name="tmp_export_666.001">
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="../meshes/dae/Cylinder.013.dae" scale="1.0 1.0 1.0"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="link_rear_right_wheel">
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="0.1"/>
+        <inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001"/>
+      </inertial>
+      <collision name="Cylinder.006.000">
+        <origin xyz="0.00043 -0.003 0.21998" rpy="-0.01365 -3.13979 0.00954"/>
+        <geometry>
+          <mesh filename="../meshes/dae/Cylinder.011.dae" scale="1.0 1.0 1.0"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="link_right_finger">
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="1"/>
+        <inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001"/>
+      </inertial>
+      <visual name="Cube.002">
+        <origin xyz="0 -0.14 0" rpy="-1.5708 0 0"/>
+        <geometry>
+          <mesh filename="../meshes/dae/Cube.012.dae" scale="0.275 0.005 0.22"/>
+        </geometry>
+      </visual>
+      <collision name="Cube.002.000">
+        <origin xyz="0 -0.14 0" rpy="-1.5708 0 0"/>
+        <geometry>
+          <mesh filename="../meshes/dae/Cube.014.dae" scale="1.0 1.0 2.75"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="link_shoulder">
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="1"/>
+        <inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001"/>
+      </inertial>
+      <visual name="shoulder.000">
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="../meshes/dae/Cylinder.005.dae" scale="0.125 0.125 0.095"/>
+        </geometry>
+      </visual>
+      <collision name="shoulder.000.000">
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="../meshes/dae/Cylinder.002.dae" scale="1.0 1.0 1.0"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="link_wrist">
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="1"/>
+        <inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001"/>
+      </inertial>
+      <visual name="Wrist.000.001">
+        <origin xyz="0 -0.08 0" rpy="-1.5708 0 0"/>
+        <geometry>
+          <mesh filename="../meshes/dae/Cube.010.dae" scale="1.0 1.0 1.0"/>
+        </geometry>
+      </visual>
+      <collision name="Wrist.000.001.000">
+        <origin xyz="0 -0.08 0" rpy="-1.5708 0 0"/>
+        <geometry>
+          <mesh filename="../meshes/dae/Cube.023.dae" scale="1.0 1.0 1.0"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <joint name="X1" type="floating">
+      <origin xyz="-0.73657 0.79033 0.27768" rpy="0.06981 0 1.5708"/>
+      <parent link="chasis"/>
+      <child link="X1"/>
+    </joint>
+
+    <joint name="X2" type="floating">
+      <origin xyz="-1.15657 0.02033 0.28768" rpy="0 0.07854 0"/>
+      <parent link="chasis"/>
+      <child link="X2"/>
+    </joint>
+
+    <joint name="X3" type="floating">
+      <origin xyz="-0.30657 0.02033 0.23768" rpy="0 0.06981 0"/>
+      <parent link="chasis"/>
+      <child link="X3"/>
+    </joint>
+
+    <joint name="X4" type="floating">
+      <origin xyz="-0.73657 -0.74967 0.27768" rpy="0.06981 0 1.5708"/>
+      <parent link="chasis"/>
+      <child link="X4"/>
+    </joint>
+
+    <joint name="link_foreamr" type="continuous">
+      <origin xyz="-0.00276 1.89983 0" rpy="0 0 1.5708"/>
+      <parent link="link_humerus"/>
+      <child link="link_foreamr"/>
+      <axis xyz="0 0 1.0"/>
+      <limit effort="0" velocity="0"/>
+    </joint>
+
+    <joint name="link_front_left_wheel" type="continuous">
+      <origin xyz="1.09369 1.05151 -1.01183" rpy="-1.5708 0 0"/>
+      <parent link="chasis"/>
+      <child link="link_front_left_wheel"/>
+      <axis xyz="0 0 1.0"/>
+      <limit effort="0" velocity="0"/>
+    </joint>
+
+    <joint name="link_front_right_wheel" type="continuous">
+      <origin xyz="1.09316 -1.20086 -1.01183" rpy="-1.5708 0 0"/>
+      <parent link="chasis"/>
+      <child link="link_front_right_wheel"/>
+      <axis xyz="0 0 1.0"/>
+      <limit effort="0" velocity="0"/>
+    </joint>
+
+    <joint name="link_hand" type="continuous">
+      <origin xyz="0 -0.19855 0" rpy="-1.5708 0 -3.14159"/>
+      <parent link="link_wrist"/>
+      <child link="link_hand"/>
+      <axis xyz="0 0 1.0"/>
+      <limit effort="0" velocity="0"/>
+    </joint>
+
+    <joint name="link_humerus" type="continuous">
+      <origin xyz="0.01768 0 0.02747" rpy="1.5708 -0.08203 0"/>
+      <parent link="link_shoulder"/>
+      <child link="link_humerus"/>
+      <axis xyz="0 0 1.0"/>
+      <limit effort="0" velocity="0"/>
+    </joint>
+
+    <joint name="link_left_finger" type="prismatic">
+      <origin xyz="0 0.44494 0.085" rpy="-1.56881 -3.14057 -0.00053"/>
+      <parent link="link_hand"/>
+      <child link="link_left_finger"/>
+      <axis xyz="0 0 1.0"/>
+      <limit lower="-0.5" upper="0" effort="5000000000.0" velocity="0"/>
+    </joint>
+
+    <joint name="link_rear_left_wheel" type="continuous">
+      <origin xyz="-1.65684 1.04151 -1.10201" rpy="1.5708 0 3.14159"/>
+      <parent link="chasis"/>
+      <child link="link_rear_left_wheel"/>
+      <axis xyz="0 0 1.0"/>
+      <limit effort="0" velocity="0"/>
+    </joint>
+
+    <joint name="link_rear_right_wheel" type="continuous">
+      <origin xyz="-1.65684 -1.20086 -1.06183" rpy="-1.58444 -0.00952 0.00193"/>
+      <parent link="chasis"/>
+      <child link="link_rear_right_wheel"/>
+      <axis xyz="0 0 1.0"/>
+      <limit effort="0" velocity="0"/>
+    </joint>
+
+    <joint name="link_right_finger" type="prismatic">
+      <origin xyz="0 -0.44506 0.085" rpy="1.5708 -3.14159 0"/>
+      <parent link="link_hand"/>
+      <child link="link_right_finger"/>
+      <axis xyz="0 0 1.0"/>
+      <limit lower="-0.5" upper="0" effort="5000000000.0" velocity="0"/>
+    </joint>
+
+    <joint name="link_shoulder" type="continuous">
+      <origin xyz="0.68631 0.02539 -0.01232" rpy="0 0.08203 0"/>
+      <parent link="chasis"/>
+      <child link="link_shoulder"/>
+      <axis xyz="0 0 1.0"/>
+      <limit effort="0" velocity="0"/>
+    </joint>
+
+    <joint name="link_wrist" type="continuous">
+      <origin xyz="-0.03221 -1.40749 0" rpy="0 0 -1.5708"/>
+      <parent link="link_foreamr"/>
+      <child link="link_wrist"/>
+      <axis xyz="0 0 1.0"/>
+      <limit effort="0" velocity="0"/>
+    </joint>
+
+  </robot>

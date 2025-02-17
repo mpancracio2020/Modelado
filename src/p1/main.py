@@ -6,7 +6,7 @@ import math
 import csv
 import sys
 
-VEL = 9.8
+VEL = 1.0
 ZERO_VEL = 0.0
 TORQUE = 10.0
 ZERO_TORQUE = 0.0
@@ -21,13 +21,13 @@ robotOrientationQ = p.getQuaternionFromEuler(robotOrientation)
 
 planeId = p.loadURDF("plane.urdf")
 
-robotId = p.loadURDF("husky/husky.urdf",[0, 0, 0], robotOrientationQ)
+robotId = p.loadURDF("/home/keist/uni/4/2q/MSR/urdf/a-bot.urdf",[0, 0, 2], robotOrientationQ)
 startPos = [0,10,0.1]
 startOrientation = p.getQuaternionFromEuler([0,0,-3.15])
 
 barrierId = p.loadURDF("barrier.urdf",[-1.8,17,0.1], startOrientation)
-rampaId = p.loadURDF("rampa.urdf",startPos, startOrientation)
-metaId = p.loadURDF("meta.urdf",[0,20,0.1], startOrientation)
+rampaId = p.loadURDF("ramp.urdf",startPos, startOrientation)
+metaId = p.loadURDF("goal.urdf",[0,20,0.1], startOrientation)
 
 
 
@@ -76,15 +76,15 @@ if (arg == "y"):
             if program_step == 0:
                 p.setRealTimeSimulation(1)
                 #p.stepSimulation()
-                p.setJointMotorControlArray(robotId,[2,3,4,5],p.VELOCITY_CONTROL, targetVelocities=[VEL,VEL,VEL,VEL])
-                p.setJointMotorControlArray(robotId,[2,3,4,5],p.TORQUE_CONTROL, forces=[TORQUE,TORQUE,TORQUE,TORQUE])
+                p.setJointMotorControlArray(robotId,[0,1,2,3],p.VELOCITY_CONTROL, targetVelocities=[VEL,VEL,VEL,VEL])
+                
                 p.stepSimulation()
                 #time.sleep(1./240.)
                 pos, program_step = process_information(pos) # update the position and get time.
 
             if program_step == 1:
-                p.setJointMotorControlArray(robotId,[2,3,4,5],p.VELOCITY_CONTROL, targetVelocities=[ZERO_VEL,ZERO_VEL,ZERO_VEL,ZERO_VEL])
-                p.setJointMotorControlArray(robotId,[2,3,4,5],p.TORQUE_CONTROL, forces=[ZERO_TORQUE,ZERO_TORQUE,ZERO_TORQUE,ZERO_TORQUE])
+                p.setJointMotorControlArray(robotId,[0,1,2,3],p.VELOCITY_CONTROL, targetVelocities=[ZERO_VEL,ZERO_VEL,ZERO_VEL,ZERO_VEL])
+             
 
             
                 
